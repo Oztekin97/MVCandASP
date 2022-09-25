@@ -1,0 +1,59 @@
+﻿@using MVCandASP.Models.Entity
+@model List<Musteriler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Personel İşlem Sayfasına Hoşgeldiniz</h2>
+@using (Html.BeginForm("Index", "Personel", FormMethod.Get))
+{
+    <p>
+        <b>Aranacak Müşteri Adı:</b> @Html.TextBox("p")
+        <input type="submit" value="Ara" />
+    </p>
+}
+<table class="table table-bordered">
+    <tr>
+        <td>Müşteri Id</td>
+        <td>Müşteri EMail</td>
+        <td>Müşteri Şifre</td>
+        <td>Müşteri Ad Soyad</td>
+        <td>Müşteri TC Kimlik</td>
+        <td>Giriş</td>
+        <td>Çıkış</td>
+        <td>Borç</td>
+        <td>Oda No</td>
+        <td>Sil</td>
+        <td>Güncelle</td>
+        <td>Rezervasyon Oluştur</td>
+    </tr>
+    <tbody>
+        @foreach (var musteri in Model)
+        {
+            <tr>
+                <td>@musteri.id</td>
+                <td>@musteri.username</td>
+                <td>@musteri.password</td>
+                <td>@musteri.adsoyad</td>
+                <td>@musteri.tc</td>
+                <td>@musteri.giris</td>
+                <td>@musteri.cikis</td>
+                <td>@musteri.borc</td>
+                <td>@musteri.odano</td>
+                <td><a href="/Personel/Sil/@musteri.id" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Personel/Guncelle/@musteri.id" class="btn btn-success">Güncelle</a></td>
+                <td><a href="~/Pages/YeniRezervasyon.aspx" class="btn btn-info">Rezervasyon Oluştur</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Personel/Ekle/" class="btn btn-success">Müşteri Ekle</a>
+<br />
+<br />
+<a href="/Personel/Cikis/" class="btn btn-danger">Çıkış</a>
+<br />
+<br />
+<a href="~/Pages/Odalar.aspx" class="btn btn-info">Odaların Durumu</a>
+
+
+

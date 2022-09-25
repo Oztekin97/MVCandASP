@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Müşteri Ekleme Sayfası</h2>
+@* name="veritabanındaki sutun adı yazılır"*@
+<form class="form-group" method="post">
+    <div>
+        <label>Müşteri E-Mail</label>
+        <input type="text" class="form-control" name="username" />
+    </div>
+    <div>
+        <label>Müşteri Şifre</label><br />
+        <abbr>Müşteri şifresini daha sonra mutlaka değiştirmeli!!!</abbr>
+        <input type="text" class="form-control" name="password" />
+    </div>
+    <div>
+        <label>Müşteri Adı Soyadı</label>
+        <input type="text" class="form-control" name="adsoyad" />
+    </div>
+    <div>
+        <label>TC</label>
+        <input type="text" class="form-control" name="tc" />
+    </div>
+    <div>
+        <label>Giriş</label>
+        <input type="text" class="form-control" name="giris" />
+    </div>
+    <div>
+        <label>Çıkış</label>
+        <input type="text" class="form-control" name="cikis" />
+    </div>
+    <div>
+        <label>Borç</label>
+        <input type="text" class="form-control" name="borc" />
+    </div>
+    <div>
+        <label>Oda No</label>
+        <input type="text" class="form-control" name="odano" />
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info" id="btnEkle" type="submit">Müşteri Ekle</button>
+    </div>
+    <script>
+        $('#btnEkle').click(function () {
+            alert('Müşteri Ekleme İşlemi Yapıldı')
+        });
+    </script>
+</form>
+

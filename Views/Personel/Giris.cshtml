@@ -1,0 +1,47 @@
+﻿@model MVCandASP.Models.Entity.Personeller
+@{
+    ViewBag.Title = "Giris";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Personel Girisi</title>
+</head>
+<body>
+    <div style="text-align:center"><b>PERSONEL GİRİŞ SAYFASI</b></div>
+    @using (Html.BeginForm("Giris", "Personel", FormMethod.Post))
+    {
+        <form id="loginForm" style="margin:0 auto">
+            <br />
+            <div>
+                <table style="margin:0 auto">
+                    <tr>
+                        <td style="text-align:left">
+                            <label for="username">KULLANICI ADI:</label>
+                        </td>
+                        <td>
+                            @Html.TextAreaFor(p => p.username, new { @class = "form-control" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left">
+                            <label for="pass">ŞİFRE:</label>
+                        </td>
+                        <td>
+                            @Html.TextAreaFor(p => p.password, new { @class = "form-control" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><button type="submit" style="text-align:center" id="btnGiris">Giriş Yap</button></td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    }
+</body>
+</html>
+
+

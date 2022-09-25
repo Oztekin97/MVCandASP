@@ -1,0 +1,32 @@
+﻿@model MVCandASP.Models.Entity.Musteriler
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>
+    HOŞGELDİNİZ SAYIN  @HttpContext.Current.User.Identity.Name
+</h2>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Musteri Girisi</title>
+</head>
+<body>
+    <div style="text-align:left"><b><label style="color:blueviolet">NE YAPMAK İSTİYORSUNUZ?</label></b></div>
+    <br />
+    <div class="form-group" style="margin:0 auto">
+        <a class="btn btn-success" href="/Pages/Rezervasyon.aspx">REZERVASYON OLUŞTURMA VE SORGULAMA</a>
+        <label id="lblBilgi" style="color:aqua" title=" "></label>
+        <br />
+        <br />
+        <a class="btn btn-danger" href="/Musteri/Cikis/">ÇIKIŞ</a>
+        <br />
+        <br />
+        <a class="btn btn-info" href="/Pages/SifreDegistir.aspx">ŞİFRE DEĞİŞTİR</a>
+    </div>
+</body>
+</html>
+
+

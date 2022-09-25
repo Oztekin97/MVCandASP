@@ -1,0 +1,30 @@
+﻿@model MVCandASP.Models.Entity.Musteriler
+@{
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Müşteri Güncelleme Sayfası</h2>
+@using (Html.BeginForm("Guncelle", "Personel", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.id)
+        @Html.TextBoxFor(m => m.id, new { @class = "form-control" })
+        @Html.LabelFor(m => m.adsoyad)
+        @Html.TextBoxFor(m => m.adsoyad, new { @class = "form-control" })
+        @Html.LabelFor(m => m.tc)
+        @Html.TextBoxFor(m => m.tc, new { @class = "form-control" })
+        @Html.LabelFor(m => m.giris)
+        @Html.TextBoxFor(m => m.giris, new { @class = "form-control" })
+        @Html.LabelFor(m => m.cikis)
+        @Html.TextBoxFor(m => m.cikis, new { @class = "form-control" })
+        @Html.LabelFor(m => m.borc)
+        @Html.TextBoxFor(m => m.borc, new { @class = "form-control" })
+        @Html.LabelFor(m => m.odano)
+        @Html.TextBoxFor(m => m.odano, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-warning">Güncelle</button>
+    </div>
+}
+
+
